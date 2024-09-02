@@ -4,9 +4,12 @@ more_movies = [
   { title: 'Green Book', rating: 'PG-13', release_date: '16-Nov-2018' },
   { title: 'Parasite', rating: 'R', release_date: '30-May-2019' },
   { title: 'Nomadland', rating: 'R', release_date: '19-Feb-2021' },
-  { title: 'CODA', rating: 'PG-13', release_date: '13-Aug-2021' }
+  { title: 'CODA', rating: 'PG-13', release_date: '13-Aug-2021' },
+  { title: 'Saving Private Ryan', rating: 'R', release_date: '24-Jul-1998' },
+  { title: 'Godzilla Minus One', rating: 'PG-13', release_date: '1-Nov-2023' },
+  { title: 'Blazing Saddles', rating: 'R', release_date: '7-Feb-1974' }
 ]
 
 more_movies.each do |movie|
-  Movie.create!(movie)
+  Movie.where(release_date: movie[:release_date], rating: movie[:rating]).first_or_create(title: movie[:title])
 end
