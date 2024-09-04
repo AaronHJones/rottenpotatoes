@@ -1,9 +1,10 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: %i[ show edit update destroy ]
+  helper_method :sort, :direction
 
   # GET /movies or /movies.json
   def index
-    @movies = Movie.order(params[:sort])
+    @movies = Movie.order("#{params[:sort]} #{params[:direction]}")
   end
 
   # GET /movies/1 or /movies/1.json

@@ -13,3 +13,66 @@
  *= require_tree .
  *= require_self
  */
+
+.sorted-column {
+    background-color: #9fff88;
+    font-weight: bold;
+}
+
+.sorted-column svg {
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+/* Center the table */
+table {
+    margin: 0 auto; /* Center the table horizontally */
+    width: 80%; /* Optional: control the width of the table */
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+th, td {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px; /* Adjust the radius as needed */
+}
+
+th {
+    background-color: #f1f1f1; /* Slightly different color for headers */
+}
+
+td {
+    background-color: #ffffff; /* White background for data cells */
+}
+
+/* Optional: Add some hover effects for better UX */
+th:hover, td:hover {
+    background-color: #f0f0f0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; /* Space between the header and the table */
+}
+
+/* Style for the h1 element */
+h1 {
+    margin: 0;
+}
+
+.new-movie-link {
+    text-decoration: none;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.new-movie-link:hover {
+    background-color: #0056b3;
+}
