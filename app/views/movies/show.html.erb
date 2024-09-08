@@ -1,10 +1,42 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @movie %>
+<div class="show-body">
+  <div class="show-title">
+    <div class="title">
+      <%= @movie.title %>
+    </div>
+    <div class="rating">
+      <%= @movie.rating %>
+    </div>
+  </div>
+  <div class="show-rd">
+    <div class="label">
+      Release Date
+    </div>
+    <div class="rd-field">
+      <%= @movie.release_date.strftime("%b %d, %Y") %>
+    </div>
+  </div>
+  <div class="show-desc">
+    <div class="label">
+      Description
+    </div>
+  </div>
+  <div class="desc-field">
+    <%= @movie.description.present? ? @movie.description : "No description provided." %>
+  </div>
+  <div class="show-btn">
+    <div class="edit">
+      <%= button_tag(type: 'button', class: "btn") do %>
+        <%= link_to "Edit Movie", edit_movie_path(@movie) %>
+      <% end %>
+      <%= button_tag(type: 'button', class: "btn") do %>
+        <%= link_to "See All", movies_path %>
+      <% end %>
+    </div>
+    <div class="destroy">
+      <%= button_to "Delete Movie", @movie, method: :delete, class: "destroy-btn" %>
+    </div>
+  </div>
 
-<div>
-  <%= link_to "Edit this movie", edit_movie_path(@movie) %> |
-  <%= link_to "Back to movies", movies_path %>
-
-  <%= button_to "Destroy this movie", @movie, method: :delete %>
 </div>

@@ -11,27 +11,48 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
+  <div class="form-body">
 
-  <div>
-    <%= form.label :rating, style: "display: block" %>
-    <%= form.text_field :rating %>
-  </div>
+    <div class="form-row">
+      <div class="lbl">
+        <%= form.label :title %>
+      </div>
+      <div class="fld">
+        <%= form.text_field :title %>
+      </div>
+    </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_field :description %>
-  </div>
+    <div class="form-row">
+      <div class="lbl">
+        <%= form.label :rating %>
+      </div>
+      <div class="fld">
+        <%= form.text_field :rating %>
+      </div>
+    </div>
 
-  <div>
-    <%= form.label :release_date, style: "display: block" %>
-    <%= form.text_field :release_date %>
-  </div>
+    <div class="form-row">
+      <div class="lbl">
+        <%= form.label :release_date %>
+      </div>
+      <div class="fld">
+        <%= form.date_field :release_date, format: "%b %d, %Y" %>
+      </div>
+    </div>
 
-  <div>
-    <%= form.submit %>
+    <div class="form-row">
+      <%= form.label :description, class: "lbl-desc" %>
+    </div>
+
+    <div class="form-row">
+      <%= form.text_field :description, class: "fld-desc" %>
+    </div>
+
+    <div class="form-buttons">
+      <%= submit_tag "Update", class: "btn" %>
+      <%= button_tag(type: 'button', class: "btn") do %>
+        <%= link_to "Cancel", movies_path %>
+      <% end %>
+    </div>
   </div>
 <% end %>

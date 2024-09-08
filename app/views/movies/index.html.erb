@@ -9,7 +9,7 @@
 <table>
   <thead>
   <tr>
-    <th class="<%= "sorted-column" if params[:sort] == "title" %>">
+    <th class="<%= "th-sorted-column" if params[:sort] == "title" %>">
       <%= link_to movies_path(sort: 'title', direction: sort_direction('title')) do %>
         Title
         <% if params[:sort] == 'title' %>
@@ -17,7 +17,7 @@
         <% end %>
       <% end %>
     </th>
-    <th class="<%= "sorted-column" if params[:sort] == "rating" %>">
+    <th class="<%= "th-sorted-column" if params[:sort] == "rating" %>">
       <%= link_to movies_path(sort: 'rating', direction: sort_direction('rating')) do %>
         Rating
         <% if params[:sort] == 'rating' %>
@@ -25,7 +25,7 @@
         <% end %>
       <% end %>
     </th>
-    <th class="<%= "sorted-column" if params[:sort] == "description" %>">
+    <th class="<%= "th-sorted-column" if params[:sort] == "description" %>">
       <%= link_to movies_path(sort: 'description', direction: sort_direction('description')) do %>
         Description
         <% if params[:sort] == 'description' %>
@@ -33,7 +33,7 @@
         <% end %>
       <% end %>
     </th>
-    <th class="<%= "sorted-column" if params[:sort] == "release_date" %>">
+    <th class="<%= "th-sorted-column" if params[:sort] == "release_date" %>">
       <%= link_to movies_path(sort: 'release_date', direction: sort_direction('release_date')) do %>
         Release Date
         <% if params[:sort] == 'release_date' %>
